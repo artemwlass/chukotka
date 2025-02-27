@@ -1,5 +1,5 @@
 <div>
-    <div class="modal date-modal fade" id="dateModal" aria-hidden="true" aria-labelledby="dateModalLabel" tabindex="-1">
+    <div class="modal date-modal fade" id="dateModal" aria-hidden="true" aria-labelledby="dateModalLabel" tabindex="-1" wire:ignore.self>
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <button type="button" class="modal-close d-flex align-items-center justify-content-center"
