@@ -61,6 +61,7 @@ class Index extends Page
                                                 FileUpload::make('image_bg')
                                                     ->required()
                                                     ->columnSpanFull()
+                                                    ->optimaze('webp')
                                                     ->label('Изображение'),
                                                 TextInput::make('title.ru.title')
                                                     ->required()
@@ -160,6 +161,7 @@ class Index extends Page
                                             ->schema([
                                                 FileUpload::make('image_bg')
                                                     ->columnSpanFull()
+                                                    ->optimaze('webp')
                                                     ->label('Изображение'),
                                                 TextInput::make('title.en.title')
                                                     ->columnSpanFull()
