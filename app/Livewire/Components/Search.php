@@ -53,13 +53,19 @@ class Search extends Component
                 ->get();
 
             foreach ($queryResults as $item) {
-                // Извлекаем локализованный заголовок
+                // Извлекаем локализованный заголовокdd($item);
                 $title = $this->extractLocalizedField($item, 'title', $language);
                 $description = $this->extractLocalizedField($item, 'description', $language);
 
+                // Получаем slug, если он есть
+                $slug = $item->slug ?? null;
+
+                // Формируем URL на основе типа модели
+                $url = $this->generateModelUrl($item, $slug);
+
                 $this->results[] = [
                     'title' => $title ?: ($description ?: 'No Title'),
-                    'url' => '#', // Здесь можно добавить ссылку на детальную страницу
+                    'url' => $url, // Здесь можно добавить ссылку на детальную страницу
                 ];
             }
         }
@@ -94,6 +100,22 @@ class Search extends Component
 
         return null;
     }
+
+    private function generateModelUrl($item, $slug)
+    {
+
+        return match (get_class($item)) {
+            Post::class => route('post', ['slug' => $slug]),
+            Tour::class => route('tour', ['slug' => $slug]),
+            BlogPage::class => route('blog'),
+            AboutPage::class => route('about'),
+            ContactPage::class => route('contact'),
+            Policy::class => route('private-policy'),
+            UserAgreement::class => route('user-agreement'),
+            default => '#',
+        };
+    }
+
 
     public function render()
     {
