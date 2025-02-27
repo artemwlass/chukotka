@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+$font-inter: "Inter", serif;
+$font-montserrat: "Montserrat Alternates", serif;
+
+// Colors
+$color-blue: #0090C7;
+$color-main-blue-dark: #0252DD;
+$color-text-gray: #6D6D6D;
+$color-text-dark: #161616;
+$color-orange: #F07D49;
+$color-gradient: linear-gradient(138.49deg, #0090C7 23.48%, #0328EA 139.21%);
+$color-gradient-orange: linear-gradient(134.91deg, #F07D49 -19.66%, #FFD15B 138%);
+$color-disable: #C9C9C9;
+// Colors end
+
+@mixin media($value) {
+    @if ($value < 0) {
+        @media screen and (min-width: calc($value * (-1)) + 'px') {
+            @content;
+        }
+
+    } @else {
+        @media screen and (max-width: $value + 'px') {
+            @content;
+        }
+    }
+}
