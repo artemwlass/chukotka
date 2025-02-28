@@ -14,11 +14,11 @@
         <!-- Policy -->
         <section class="policy">
             <div class="container">
-                <div class="policy-content__wrap">
+                <div class="policy-content">
                     <h2>{{__($data->title[app()->getLocale()]['title'])}}</h2>
-                    <ol class="policy-content d-flex flex-column">
-                        {!! __($data->description[app()->getLocale()]['description']) !!}
-                    </ol>
+
+                    {!! __($data->description[app()->getLocale()]['description']) !!}
+
                 </div>
             </div>
         </section>

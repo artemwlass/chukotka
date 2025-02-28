@@ -59,6 +59,14 @@ class TourResource extends Resource
                                 TextInput::make('slug')
                                     ->required()
                                     ->label('URL'),
+                                Select::make('type_logo')
+                                    ->options([
+                                        'image' => 'Изображение',
+                                        'blue' => 'Синий градиент',
+                                        'orange' => 'Оранжевый градиент',
+                                    ])
+                                    ->required()
+                                    ->label('Выберите тип изображения'),
                                 FileUpload::make('main_image')
                                     ->label('Изображение')
                                     ->columnSpanFull()
@@ -184,8 +192,8 @@ class TourResource extends Resource
                         Tabs\Tab::make('Что входит/не входит в стоимость')
                             ->schema([
                                 Forms\Components\RichEditor::make('include.include')
-                                ->required()
-                                ->label('Что входит в стоимость'),
+                                    ->required()
+                                    ->label('Что входит в стоимость'),
                                 Forms\Components\RichEditor::make('include.not_include')
                                     ->required()
                                     ->label('Что не входит в стоимость'),

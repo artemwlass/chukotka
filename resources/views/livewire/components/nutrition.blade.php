@@ -1,6 +1,6 @@
 <div>
     <div class="modal nutrition-modal fade" id="nutritionModal" tabindex="-1" aria-labelledby="nutritionModalLabel"
-         aria-hidden="true">
+         aria-hidden="true" wire:ignore.self>
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <button class="d-flex align-items-center justify-content-center rounded-circle" type="button"

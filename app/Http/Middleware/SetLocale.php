@@ -29,7 +29,7 @@ class SetLocale
 
         // 1. Если локаль `ru`, но в URL есть `/ru` → редирект на чистый URL
         if ($locale === 'ru' && $request->segment(1) === 'ru') {
-            return Redirect::to($this->removeFirstSegment($request));
+//            return Redirect::to($this->removeFirstSegment($request));
         }
 
         return $next($request);
