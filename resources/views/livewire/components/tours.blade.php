@@ -23,9 +23,9 @@
                                 <div
                                     class="tours-card__head d-flex flex-column flex-lg-row align-items-start justify-content-between">
                                     <ul class="d-flex align-items-stretch rounded-pill text-white"
-                                        data-bs-target="#dateModal"
+                                        data-bs-target="#dateModal-{{ $tour->id }}"
                                         data-bs-toggle="modal"
-                                        wire:click="$dispatch('openDateModal', { id: {{ $tour->id }} })"
+{{--                                        wire:click="$dispatch('openDateModal', { id: {{ $tour->id }} })"--}}
                                     >
                                         <li>{{ \Carbon\Carbon::parse($earliestDate)->format('d.m') }}</li>
                                         @if($dateCount > 1)
@@ -57,9 +57,9 @@
                                 <div
                                     class="tours-card__head d-flex flex-column flex-lg-row align-items-start justify-content-between">
                                     <ul class="d-flex align-items-stretch rounded-pill text-white"
-                                        data-bs-target="#dateModal"
+                                        data-bs-target="#dateModal-{{ $tour->id }}"
                                         data-bs-toggle="modal"
-                                        wire:click="$dispatch('openDateModal', { id: {{ $tour->id }} })"
+{{--                                        wire:click="$dispatch('openDateModal', { id: {{ $tour->id }} })"--}}
                                     >
                                         <li>{{ \Carbon\Carbon::parse($earliestDate)->format('d.m') }}</li>
                                         @if($dateCount > 1)
@@ -92,9 +92,9 @@
                                 <div
                                     class="tours-card__head d-flex flex-column flex-lg-row align-items-start justify-content-between">
                                     <ul class="d-flex align-items-stretch rounded-pill text-white"
-                                        data-bs-target="#dateModal"
+                                        data-bs-target="#dateModal-{{ $tour->id }}"
                                         data-bs-toggle="modal"
-                                        wire:click="$dispatch('openDateModal', { id: {{ $tour->id }} })"
+{{--                                        wire:click="$dispatch('openDateModal', { id: {{ $tour->id }} })"--}}
                                     >
                                         <li>{{ \Carbon\Carbon::parse($earliestDate)->format('d.m') }}</li>
                                         @if($dateCount > 1)
@@ -115,6 +115,8 @@
                             </div>
                         </div>
                     @endif
+                    <livewire:components.date-modal :id="$tour->id" />
+
                 @endforeach
             </div>
         </div>

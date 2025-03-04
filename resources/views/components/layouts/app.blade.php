@@ -98,7 +98,7 @@
     <!-- Search modal end -->
 
     <!-- Date modal -->
-    <livewire:components.date-modal />
+{{--    <livewire:components.date-modal />--}}
     <!-- Date modal end -->
 
     <!-- Video modal -->
