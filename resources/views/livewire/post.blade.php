@@ -55,7 +55,7 @@
                     @if($recommend)
                         <div class="article-content__item d-flex flex-column align-items-start w-100">
                             <div class="main-card d-flex align-items-stretch justify-content-between w-100">
-                                <img src="{{asset('assets/images/article-main-card-bg.png')}}" alt="" class="bg-img">
+{{--                                <img src="{{asset('assets/images/article-main-card-bg.png')}}" alt="" class="bg-img">--}}
                                 <div class="d-flex flex-column justify-content-between align-items-start">
                                     <h4>{{__('Рекомендуем тур')}}</h4>
                                     <div class="w-100">

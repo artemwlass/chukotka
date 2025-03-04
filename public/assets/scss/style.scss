@@ -967,6 +967,7 @@ body {
         border-radius: 20px;
         padding: 60px 70px;
         z-index: 1;
+        background: $color-gradient;
 
         @include media(1100) {
             padding: 44px 22px 359px;
@@ -1124,7 +1125,11 @@ body {
         z-index: -1;
         width: 100%;
         height: calc(100% - 177px);
-        object-fit: cover;
+        background: linear-gradient(182.71deg, #0328EA -129.33%, #0090C7 119.48%);
+        border-radius: 50px;
+        transform: rotate(-180deg);
+
+        // object-fit: cover;
 
         @include media(1100) {
             border-radius: 50px;
@@ -1662,6 +1667,7 @@ body {
         color: white;
         border-radius: 20px;
         overflow: hidden;
+        background: $color-gradient;
 
         @include media(1100) {
             padding: 50px 30px 346px;
@@ -2362,6 +2368,7 @@ body {
         position: relative;
         z-index: 1;
         padding: 14px 14px 14px 24px;
+        background: $color-gradient;
 
         @include media(700) {
             flex-direction: column !important;
@@ -2596,6 +2603,7 @@ body {
         color: white;
         gap: 30px;
         padding: 30px;
+        background: linear-gradient(138.49deg, #0090C7 23.48%, #0328EA 139.21%);
 
         @include media(1100) {
             max-width: calc(100% + 60px);
@@ -3020,6 +3028,10 @@ body {
         object-fit: cover;
         z-index: -1;
         border-radius: 50px;
+        background: linear-gradient(199.3deg, #0328EA -122.87%, #0090C7 97.8%);
+        border-radius: 50px;
+        transform: rotate(-180deg);
+
 
         @include media(700) {
             border-radius: 20px;
@@ -4054,6 +4066,8 @@ body {
         height: 100%;
         z-index: -1;
         object-fit: cover;
+        background: linear-gradient(182.71deg, #0328EA -129.33%, #0090C7 119.48%);
+        transform: rotate(-180deg);
     }
 
     h2 {
@@ -4516,6 +4530,10 @@ body {
         height: calc(100% - 233px);
         z-index: -1;
         border-radius: 50px;
+        background: linear-gradient(182.71deg, #0328EA -129.33%, #0090C7 119.48%);
+        border-radius: 50px;
+        transform: rotate(-180deg);
+
 
         @include media(1100) {
             height: calc(100% - 182px);
@@ -4836,12 +4854,24 @@ body {
 
     .modal-content {
         height: calc(100svh - 60px);
+        background: #000;
     }
 
-    iframe {
+    .modal-close {
+        width: 40px;
+        height: 40px;
+        background: rgba(2, 82, 221, 0.3);
+        position: absolute;
+        top: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+    }
+
+    iframe, video {
         width: 100%;
         height: 100%;
-        object-fit: contain;
+        // object-fit: contain;
     }
 }
 // Video modal end

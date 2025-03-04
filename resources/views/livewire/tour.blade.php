@@ -44,6 +44,13 @@
                                wire:click="$dispatch('openBookTour', { tourId: {{ $data->id }}, bookId: {{$data->id}} })"
                             >{{__('Забронировать тур')}}</a>
                             <a href="#" class="btn_light" data-bs-toggle="modal" data-bs-target="#tourModal">{{__('Заявка на корпоративный тур')}}</a>
+                            <a style="display: inline-block; cursor: pointer; background-color: #007cf0; color: #fff;border: none; border-radius: 3px; padding: 0 20px; vertical-align: middle; font-size: 1rem; line-height: 42px; text-align: center; text-decoration: none; font-weight: 600; text-transform: none;"
+
+                               href="/booking-page?showcase=17baa4f6-ce6e-4ae6-b97c-42697b0ee9d6-de28ea94181ca693ef3fb39384043def&tour=39367">
+
+                                Забронировать тур  //Текст кнопки
+
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -237,7 +244,9 @@
 
         <!-- Features -->
         <section class="features">
-            <img src="{{asset('assets/images/features-bg.png')}}" alt="" class="features-bg">
+            <div class="features-bg"></div>
+
+            {{--            <img src="{{asset('assets/images/features-bg.png')}}" alt="" class="features-bg">--}}
             <div class="container">
                 <h2>{{__('Особенности программы:')}}</h2>
                 <div class="row">
@@ -414,7 +423,9 @@
 
         <!-- Work -->
         <section class="work">
-            <img src="{{asset('assets/images/work-block-bg.png')}}" alt="" class="work-bg">
+            <div class="work-bg"></div>
+
+            {{--            <img src="{{asset('assets/images/work-block-bg.png')}}" alt="" class="work-bg">--}}
             <div class="container">
                 <div class="row work-head">
                     <div class="col-12 col-xl-4">

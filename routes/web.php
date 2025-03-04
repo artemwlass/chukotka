@@ -3,6 +3,7 @@
 use App\Http\Middleware\SetLocale;
 use App\Livewire\About;
 use App\Livewire\Blog;
+use App\Livewire\BookingPage;
 use App\Livewire\Contact;
 use App\Livewire\Index;
 use App\Livewire\Policy;
@@ -26,5 +27,6 @@ Route::middleware(SetLocale::class)->group(function () {
         Route::get('/tours', Tours::class)->name('tours');
         Route::get('/private-policy', Policy::class)->name('private-policy');
         Route::get('/user-agreement', UserAgreement::class)->name('user-agreement');
+        Route::get('booking-page', BookingPage::class)->name('booking-page');
     });
 });

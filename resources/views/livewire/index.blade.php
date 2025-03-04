@@ -33,7 +33,7 @@
         <!-- Organize -->
         <section class="organize">
             <div class="container position-relative organize-container">
-                <img src="{{asset('assets/images/organize-bg.png')}}" alt="" class="organize-bg">
+{{--                <img src="{{asset('assets/images/organize-bg.png')}}" alt="" class="organize-bg">--}}
                 <h2 class="text-uppercase">
                     {{__($data->personal_tour[app()->getLocale()]['title'])}}
                     <span>
@@ -54,7 +54,9 @@
 
         <!-- Kompany -->
         <section class="company">
-            <img src="{{asset('assets/images/company-bg.png')}}" alt="" class="company-bg">
+            <div class="company-bg"></div>
+
+            {{--            <img src="{{asset('assets/images/company-bg.png')}}" alt="" class="company-bg">--}}
             <div class="container">
                 <div class="company-head">
                     <h2 class="text-uppercase">{{__($data->about_company[app()->getLocale()]['title'])}}</h2>

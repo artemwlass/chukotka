@@ -88,7 +88,8 @@
 
         <!-- Partners -->
         <div class="partners">
-            <img src="{{asset('assets/images/partners-bg.png')}}" alt="" class="partners-bg">
+            <div class="partners-bg"></div>
+{{--            <img src="{{asset('assets/images/partners-bg.png')}}" alt="" class="partners-bg">--}}
             <div class="container">
                 <ul class="partners-card__wrap d-flex flex-wrap align-items-center">
                     @foreach($data->partner['images'] as $value)

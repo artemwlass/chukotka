@@ -1,7 +1,7 @@
 <div>
     <section class="request">
         <div class="container request-container">
-            <img src="{{asset('assets/images/request-bg.png')}}" alt="" class="bg-img">
+{{--            <img src="{{asset('assets/images/request-bg.png')}}" alt="" class="bg-img">--}}
             <h2>{{__('Нет времени на поиск?')}}</h2>
             <h3>{{__('Мы поможем подобрать тур по вашим предпочтениям')}}</h3>
 

@@ -948,6 +948,7 @@ body {
     border-radius: 20px;
     padding: 60px 70px;
     z-index: 1;
+    background: linear-gradient(138.49deg, #0090C7 23.48%, #0328EA 139.21%);
 }
 @media screen and (max-width: 1100px) {
     .organize-container {
@@ -1108,8 +1109,9 @@ body {
     z-index: -1;
     width: 100%;
     height: calc(100% - 177px);
-    -o-object-fit: cover;
-    object-fit: cover;
+    background: linear-gradient(182.71deg, #0328EA -129.33%, #0090C7 119.48%);
+    border-radius: 50px;
+    transform: rotate(-180deg);
 }
 @media screen and (max-width: 1100px) {
     .company-bg {
@@ -1624,6 +1626,7 @@ body {
     color: white;
     border-radius: 20px;
     overflow: hidden;
+    background: linear-gradient(138.49deg, #0090C7 23.48%, #0328EA 139.21%);
 }
 @media screen and (max-width: 1100px) {
     .request-container {
@@ -2289,6 +2292,7 @@ body {
     position: relative;
     z-index: 1;
     padding: 14px 14px 14px 24px;
+    background: linear-gradient(138.49deg, #0090C7 23.48%, #0328EA 139.21%);
 }
 @media screen and (max-width: 700px) {
     .article .main-card {
@@ -2514,6 +2518,7 @@ body {
     color: white;
     gap: 30px;
     padding: 30px;
+    background: linear-gradient(138.49deg, #0090C7 23.48%, #0328EA 139.21%);
 }
 @media screen and (max-width: 1100px) {
     .contact-content {
@@ -2941,6 +2946,9 @@ body {
     object-fit: cover;
     z-index: -1;
     border-radius: 50px;
+    background: linear-gradient(199.3deg, #0328EA -122.87%, #0090C7 97.8%);
+    border-radius: 50px;
+    transform: rotate(-180deg);
 }
 @media screen and (max-width: 700px) {
     .partners-bg {
@@ -3938,6 +3946,8 @@ body {
     z-index: -1;
     -o-object-fit: cover;
     object-fit: cover;
+    background: linear-gradient(182.71deg, #0328EA -129.33%, #0090C7 119.48%);
+    transform: rotate(-180deg);
 }
 .features h2 {
     text-align: center;
@@ -4374,6 +4384,9 @@ body {
     height: calc(100% - 233px);
     z-index: -1;
     border-radius: 50px;
+    background: linear-gradient(182.71deg, #0328EA -129.33%, #0090C7 119.48%);
+    border-radius: 50px;
+    transform: rotate(-180deg);
 }
 @media screen and (max-width: 1100px) {
     .work-bg {
@@ -4676,12 +4689,21 @@ body {
 }
 .video-modal .modal-content {
     height: calc(100svh - 60px);
+    background: #000;
 }
-.video-modal iframe {
+.video-modal .modal-close {
+    width: 40px;
+    height: 40px;
+    background: rgba(2, 82, 221, 0.3);
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+.video-modal iframe, .video-modal video {
     width: 100%;
     height: 100%;
-    -o-object-fit: contain;
-    object-fit: contain;
 }
 
 .thank-modal .modal-dialog {

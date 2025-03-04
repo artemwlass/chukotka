@@ -16,7 +16,7 @@
                 <h2>{{$data->content[app()->getLocale()]['title']}}</h2>
                 {!! $data->content['map'] !!}
                 <div class="contact-content d-flex flex-wrap">
-                    <img src="{{asset('assets/images/contact-content-bg.png')}}" alt="" class="contact-content__bg">
+{{--                    <img src="{{asset('assets/images/contact-content-bg.png')}}" alt="" class="contact-content__bg">--}}
                     <div class="contact-content__item d-flex flex-column">
                         <label for="">{{__('Номер телефона')}}</label>
                         <a href="tel:{{$data->content['phone']}}">{{$data->content['phone']}}</a>
