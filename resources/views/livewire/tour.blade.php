@@ -21,8 +21,7 @@
                     <div class="tour-home__content-head d-flex align-items-center flex-wrap">
                         <div class="date d-flex align-items-center"
                              data-bs-toggle="modal"
-                             data-bs-target="#dateModal"
-                             wire:click="$dispatch('openDateModal', { id: {{ $data->id }} })"
+                             data-bs-target="#dateModal-{{ $data->id }}"
                         >
                             <label for="">{{__('Даты заездов:')}}</label>
                             <p>
@@ -44,13 +43,6 @@
                                wire:click="$dispatch('openBookTour', { tourId: {{ $data->id }}, bookId: {{$data->id}} })"
                             >{{__('Забронировать тур')}}</a>
                             <a href="#" class="btn_light" data-bs-toggle="modal" data-bs-target="#tourModal">{{__('Заявка на корпоративный тур')}}</a>
-                            <a style="display: inline-block; cursor: pointer; background-color: #007cf0; color: #fff;border: none; border-radius: 3px; padding: 0 20px; vertical-align: middle; font-size: 1rem; line-height: 42px; text-align: center; text-decoration: none; font-weight: 600; text-transform: none;"
-
-                               href="/booking-page?showcase=17baa4f6-ce6e-4ae6-b97c-42697b0ee9d6-de28ea94181ca693ef3fb39384043def&tour=39367">
-
-                                Забронировать тур  //Текст кнопки
-
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -67,6 +59,7 @@
                 </ul>
             </div>
         </section>
+        <livewire:components.date-modal :id="$data->id" />
         <!-- Tour home end -->
 
         <!-- About tour -->

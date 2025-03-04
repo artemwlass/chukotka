@@ -13,7 +13,7 @@ class DateModal extends Component
     public $tour;
     public $groupedBookings = [];
 
-    public function mount($id)
+    public function mount($id = null)
     {
         $this->tour = Tour::with('bookings')->find($id);
         if ($this->tour instanceof Tour && $this->tour->bookings->isNotEmpty()) {
