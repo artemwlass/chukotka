@@ -103,7 +103,11 @@ class Index extends Page
                                                 FileUpload::make('personal_tour.image')
                                                     ->required()
                                                     ->columnSpanFull()
-                                                    ->label('Изображение'),
+                                                    ->label('Изображение ПК'),
+                                                FileUpload::make('personal_tour.image_mob')
+                                                    ->required()
+                                                    ->columnSpanFull()
+                                                    ->label('Изображение телефон'),
                                             ])->columns(3),
                                         Tabs\Tab::make('О компании')
                                             ->schema([

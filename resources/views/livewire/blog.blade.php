@@ -50,7 +50,7 @@
                             </div>
                         @else
                             <div class="col-12 col-sm-6 col-xl-4">
-                                <a href="{{route('post', ['slug' => $post->slug])}}">
+                                <a style="width: 100%" href="{{route('post', ['slug' => $post->slug])}}">
                                 <div class="blog-card sm-card">
                                     <div class="blog-card__head d-flex flex-column justify-content-between">
                                         <div class="main-img">

@@ -47,7 +47,7 @@
                     <a href="#" class="btn_light" data-bs-toggle="modal" data-bs-target="#tourModal">{{__('Заявка на корпоративный тур')}}</a>
                 </div>
                 <img src="{{asset('storage/' . $data->personal_tour['image'])}}" alt="" class="organize-card">
-                <img src="{{asset('storage/' . $data->personal_tour['image'])}}" alt="" class="organize-card lg">
+                <img src="{{asset('storage/' . $data->personal_tour['image_mob'])}}" alt="" class="organize-card lg">
             </div>
         </section>
         <!-- Organize end -->
