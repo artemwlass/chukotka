@@ -48,7 +48,10 @@ class HeaderAndFooter extends Page
 //                                                TextInput::make('header.ru.logo')
 //                                                    ->required()
 //                                                    ->label('Название сайта'),
-                                                FileUpload::make('header.ru.logo')
+                                                FileUpload::make('header.ru.logo1')
+                                                    ->required()
+                                                    ->label('Лого'),
+                                                FileUpload::make('header.ru.logo2')
                                                     ->required()
                                                     ->label('Лого'),
                                                 Repeater::make('header.ru.link')
@@ -75,9 +78,9 @@ class HeaderAndFooter extends Page
                                             ]),
                                         Tabs\Tab::make('Footer')
                                             ->schema([
-                                                TextInput::make('footer.ru.logo')
+                                                FileUpload::make('footer.ru.logo')
                                                     ->required()
-                                                    ->label('Название сайта'),
+                                                    ->label('Лого'),
                                                 Repeater::make('footer.ru.logos')
                                                     ->label('Логотипы')
                                                     ->schema([
@@ -131,9 +134,10 @@ class HeaderAndFooter extends Page
                                     ->tabs([
                                         Tabs\Tab::make('Header')
                                             ->schema([
-                                                TextInput::make('header.en.logo')
-                                                    ->required()
-                                                    ->label('Название сайта'),
+                                                FileUpload::make('header.en.logo1')
+                                                    ->label('Лого'),
+                                                FileUpload::make('header.en.logo2')
+                                                    ->label('Лого'),
                                                 Repeater::make('header.en.link')
                                                     ->label('Меню')
                                                     ->schema([
@@ -158,9 +162,9 @@ class HeaderAndFooter extends Page
                                             ]),
                                         Tabs\Tab::make('Footer')
                                             ->schema([
-                                                TextInput::make('footer.en.logo')
-                                                    ->required()
-                                                    ->label('Название сайта'),
+
+                                                FileUpload::make('footer.en.logo')
+                                                    ->label('Лого'),
                                                 Repeater::make('footer.en.logos')
                                                     ->label('Логотипы банков')
                                                     ->schema([

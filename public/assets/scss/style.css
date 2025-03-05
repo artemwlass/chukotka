@@ -247,9 +247,19 @@ body {
     color: white;
     font-weight: bold;
 }
+.header-logo img {
+    height: 15px;
+    width: auto;
+}
+.header-logo img:nth-child(2) {
+    display: none;
+}
 @media screen and (max-width: 1100px) {
     .header-logo {
         font-size: 16px;
+    }
+    .header-logo img {
+        height: 12px;
     }
 }
 @media screen and (max-width: 700px) {
@@ -410,8 +420,11 @@ body {
 .header-right a:hover svg path {
     fill: #0090C7;
 }
-.header.active .header-logo, .header.default .header-logo {
-    color: #0090C7;
+.header.active .header-logo img, .header.default .header-logo img {
+    display: none;
+}
+.header.active .header-logo img:nth-child(2), .header.default .header-logo img:nth-child(2) {
+    display: block;
 }
 .header.active .header-navs a, .header.default .header-navs a {
     color: #161616;
@@ -1787,6 +1800,20 @@ body {
 @media screen and (max-width: 700px) {
     .footer-logo span {
         font-size: 30px;
+    }
+}
+.footer-logo img {
+    height: 22px;
+    width: auto;
+}
+@media screen and (max-width: 1200px) {
+    .footer-logo img {
+        height: 15px;
+    }
+}
+@media screen and (max-width: 700px) {
+    .footer-logo img {
+        height: 22px;
     }
 }
 @media screen and (max-width: 1200px) {

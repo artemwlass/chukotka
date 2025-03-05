@@ -192,8 +192,21 @@ body {
         color: white;
         font-weight: bold;
 
+        img {
+            height: 15px;
+            width: auto;
+
+            &:nth-child(2) {
+                display: none;
+            }
+        }
+
         @include media(1100) {
             font-size: 16px;
+
+            img {
+                height: 12px;
+            }
         }
 
         @include media(700) {
@@ -379,8 +392,12 @@ body {
 
     &.active, &.default {
         .header {
-            &-logo {
-                color: $color-blue;
+            &-logo img {
+                display: none;
+
+                &:nth-child(2) {
+                    display: block;
+                }
             }
 
             &-navs {
@@ -1822,6 +1839,19 @@ body {
 
             @include media(700) {
                 font-size: 30px;
+            }
+        }
+
+        img {
+            height: 22px;
+            width: auto;
+
+            @include media(1200) {
+                height: 15px;
+            }
+
+            @include media(700) {
+                height: 22px;
             }
         }
 
