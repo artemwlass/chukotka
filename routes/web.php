@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\Analytic;
 use App\Http\Middleware\SetLocale;
 use App\Livewire\About;
 use App\Livewire\Blog;
@@ -12,9 +13,8 @@ use App\Livewire\Tour;
 use App\Livewire\Tours;
 use App\Livewire\UserAgreement;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Session;
 
-Route::middleware(SetLocale::class)->group(function () {
+Route::middleware([SetLocale::class, Analytic::class])->group(function () {
     $locale = request()->segment(1);
 
     Route::prefix($locale === 'en' ? 'en' : '')->group(function () {

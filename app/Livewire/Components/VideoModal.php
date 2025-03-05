@@ -9,11 +9,12 @@ use Livewire\Component;
 
 class VideoModal extends Component
 {
-    public $data;
-    #[On('openVideo')]
-    public function getVideo($tourId)
+    public $video;
+//    #[On('openVideo')]
+    public function getVideo($video)
     {
-        $this->data = Tour::find($tourId);
+        dd($video);
+        $this->video = $video;
     }
     public function render()
     {

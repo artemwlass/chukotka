@@ -45,9 +45,12 @@ class HeaderAndFooter extends Page
                                     ->tabs([
                                         Tabs\Tab::make('Header')
                                             ->schema([
-                                                TextInput::make('header.ru.logo')
+//                                                TextInput::make('header.ru.logo')
+//                                                    ->required()
+//                                                    ->label('Название сайта'),
+                                                FileUpload::make('header.ru.logo')
                                                     ->required()
-                                                    ->label('Название сайта'),
+                                                    ->label('Лого'),
                                                 Repeater::make('header.ru.link')
                                                     ->label('Меню')
                                                     ->schema([

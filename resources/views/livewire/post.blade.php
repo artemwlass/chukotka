@@ -49,7 +49,7 @@
         <section class="article">
             <div class="container">
                 <div class="article-content d-flex flex-column">
-                    <div class="article-content__item d-flex flex-column align-items-start">
+                    <div class="article-content__item d-flex flex-column align-items-start img-border">
                         {!! __($data->description) !!}
                     </div>
                     @if($recommend)
@@ -76,7 +76,7 @@
         <section class="article">
             <div class="container">
                 <div class="article-content d-flex flex-column">
-                    <div class="article-content__item d-flex flex-column align-items-start">
+                    <div class="article-content__item d-flex flex-column align-items-start img-border">
                         {!! __($data->description_2) !!}
                     </div>
                 </div>
@@ -134,4 +134,9 @@
         <!-- Request end -->
 
     </main>
+    <style>
+        .img-border img {
+            border-radius: 20px;
+        }
+    </style>
 </div>

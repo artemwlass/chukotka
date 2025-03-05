@@ -135,10 +135,11 @@ class Index extends Page
                                                     ->required()
                                                     ->columnSpanFull()
                                                     ->label('Заголовок на видео'),
-                                                TextInput::make('about_company.title_video_link')
+                                                FileUpload::make('about_company.title_video_link')
                                                     ->required()
                                                     ->columnSpanFull()
-                                                    ->label('Ссылка на видео'),
+                                                    ->directory('film')
+                                                    ->label('Видео'),
                                                 RichEditor::make('about_company.ru.title_video_description')
                                                     ->required()
                                                     ->label('Описание')
@@ -219,9 +220,10 @@ class Index extends Page
                                                 TextInput::make('about_company.en.title_video')
                                                     ->columnSpanFull()
                                                     ->label('Заголовок на видео'),
-                                                TextInput::make('about_company.title_video_link')
+                                                FileUpload::make('about_company.title_video_link')
                                                     ->columnSpanFull()
-                                                    ->label('Ссылка на видео'),
+                                                    ->directory('film')
+                                                    ->label('Видео'),
                                                 RichEditor::make('about_company.en.title_video_description')
                                                     ->label('Описание')
                                                     ->columnSpanFull()

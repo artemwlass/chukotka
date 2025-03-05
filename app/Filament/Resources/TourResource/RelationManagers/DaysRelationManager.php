@@ -55,6 +55,10 @@ class DaysRelationManager extends RelationManager
                             ->columnSpanFull()
                             ->schema([
                                 Forms\Components\FileUpload::make('icon')->required()->label('Иконка'),
+                                Forms\Components\Select::make('color')->required()->label('Цвет')->options([
+                                   'rgba(109, 109, 109, 0.1)' => 'Неактивный',
+                                   'rgba(2, 82, 221, 0.1)' => 'Активный',
+                                ]),
                                 TextInput::make('title')->required()->label('Текст')
                             ])
 

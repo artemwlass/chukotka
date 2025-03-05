@@ -1,6 +1,6 @@
 <div>
     <div class="modal video-modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel"
-         aria-hidden="true">
+         aria-hidden="true" wire:ignore.self>
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
 {{--                {!! $data?->link_video !!}--}}
@@ -8,7 +8,7 @@
                     <img src="{{asset('assets/images/times-white.svg')}}" alt="">
                 </button>
                 <video controls>
-                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    <source src="{{asset('storage/' . $video )}}" type="video/mp4">
                     <source src="mov_bbb.ogg" type="video/ogg">
                 </video>
             </div>

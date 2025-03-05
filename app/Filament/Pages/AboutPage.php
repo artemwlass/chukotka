@@ -126,17 +126,20 @@ class AboutPage extends Page
                                                     ->rows(5)
                                                     ->label('Текст'),
                                                 Repeater::make('partner.images')
-                                                    ->columnSpanFull()
+                                                    ->hiddenLabel()
+                                                    ->label('логотипам')
                                                     ->schema([
                                                         FileUpload::make('logo')
                                                             ->required()
-                                                            ->label('Логотип'),
+                                                            ->label('Логотип')
                                                     ])
+                                                    ->grid(2), // Задает две колонки внутри репитера
                                             ]),
                                         Tabs\Tab::make('Карточка организации')
                                             ->schema([
                                                 Repeater::make('card_organization.ru.card')
                                                     ->hiddenLabel()
+                                                    ->label('карточке строку')
                                                     ->columnSpanFull()
                                                     ->schema([
                                                         TextInput::make('title')->required()->label('Ключ'),
@@ -219,6 +222,8 @@ class AboutPage extends Page
                                                     ->label('Текст'),
                                                 Repeater::make('partner.images')
                                                     ->columnSpanFull()
+                                                    ->hiddenLabel()
+                                                    ->label('логотипам')
                                                     ->schema([
                                                         FileUpload::make('logo')
                                                             ->required()
@@ -229,6 +234,7 @@ class AboutPage extends Page
                                             ->schema([
                                                 Repeater::make('card_organization.en.card')
                                                     ->hiddenLabel()
+                                                    ->label('карточке строку')
                                                     ->columnSpanFull()
                                                     ->schema([
                                                         TextInput::make('title')->label('Ключ'),

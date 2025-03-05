@@ -1,6 +1,6 @@
 <div>
     <main>
-
+        <livewire:components.video-modal :video="$data->link_video" />
         <!-- Breadcrumb -->
         <section class="breadcrumb">
             <div class="container breadcrumb-container d-flex align-items-center flex-wrap">
@@ -111,7 +111,6 @@
                 <a href="#" class="d-flex align-items-center justify-content-center"
                    data-bs-toggle="modal"
                    data-bs-target="#videoModal"
-                   wire:click="$dispatch('openVideo', { tourId: {{ $data->id }} })"
                 >
                     <img src="{{asset('assets/images/play-icon.svg')}}" alt="">
                 </a>
@@ -154,8 +153,8 @@
                             <ul class="program-card__list d-flex align-items-center flex-wrap">
                                 @foreach($day->program_capabilities['capabilities'] as $value)
                                 <li class="d-flex align-items-center">
-                                    <div class="icon d-flex align-items-center justify-content-center rounded-circle">
-                                        <img src="{{asset('storage/' . $value['icon'])}}" alt="">
+                                    <div class="icon d-flex align-items-center justify-content-center rounded-circle" style="background: {{isset($value['color']) ? $value['color'] : 'rgba(2, 82, 221, 0.1)'}}">
+                                        <img src="{{asset('storage/' . $value['icon'])}}" alt="" >
                                     </div>
                                     <p>{!! $value['title'] !!}</p>
                                 </li>

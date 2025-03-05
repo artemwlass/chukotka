@@ -103,7 +103,10 @@ class TourResource extends Resource
                                     ->optimize('webp')
                                     ->columnSpanFull()
                                     ->required(),
-                                TextInput::make('link_video')
+                                FileUpload::make('link_video')
+                                    ->columnSpanFull()
+                                    ->directory('film')
+                                    ->label('Видео'),
                             ]),
                         Tabs\Tab::make('Галерея')
                             ->schema([

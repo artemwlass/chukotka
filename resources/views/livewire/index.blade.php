@@ -1,5 +1,6 @@
 <div>
     <main>
+        <livewire:components.video-modal :video="$data->about_company['title_video_link']" />
 
         <!-- Home -->
         <section class="home position-relative">
