@@ -27,7 +27,8 @@ class GetTour extends Command
      */
     public function handle()
     {
-        $url = 'https://atom-s.com/api/v2/df152aada6a941b8a7769d1ceb1f4564-booking-system/search.json'; // Укажи реальный URL API
+//        $url = 'https://atom-s.com/api/v2/39367-booking-system/search.json'; // Укажи реальный URL API
+        $url = 'http://www.atom-s.com/api/v2/17baa4f6-ce6e-4ae6-b97c-42697b0ee9d6-de28ea94181ca693ef3fb39384043def/search.json'; // Укажи реальный URL API
 
         try {
             $response = Http::get($url);

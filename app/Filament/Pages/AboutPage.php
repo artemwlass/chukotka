@@ -65,6 +65,7 @@ class AboutPage extends Page
                                                     ->label('Заголовок'),
                                                 FileUpload::make('image')
                                                     ->required()
+                                                    ->optimize('webp')
                                                     ->label('Изображение')
                                                     ->columnSpanFull(),
                                                 RichEditor::make('header_description.ru.description')

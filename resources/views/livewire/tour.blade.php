@@ -24,10 +24,14 @@
                              data-bs-target="#dateModal-{{ $data->id }}"
                         >
                             <label for="">{{__('Даты заездов:')}}</label>
+                            @if($nearestBooking)
                             <p>
                                 c {{ \Carbon\Carbon::parse($nearestBooking->date_from)->translatedFormat('d F') }}
                                 по {{ \Carbon\Carbon::parse($nearestBooking->date_to)->translatedFormat('d F') }}
                             </p>
+                            @else
+                                <p>Раннее бронирование</p>
+                            @endif
                         </div>
                         <h4>{{__('Длительность тура:')}} {{ $data->tour_duration }} {{__('дней')}}</h4>
                     </div>
@@ -293,10 +297,10 @@
 
         <!-- Take -->
         <section class="take">
-            <div class="container">
+            <div class="container" >
                 <h2>{{__('Что взять с собой?')}}</h2>
                 <div class="take-content">
-                    <div class="take-content__item-wrap d-flex align-items-start justify-content-between">
+                    <div id="copyContent" class="take-content__item-wrap d-flex align-items-start justify-content-between">
                         <div class="take-content__item">
                             <h3>{{__('Обязательно')}}</h3>
                             <div class="row row-gap-3">
@@ -304,7 +308,7 @@
                                     <ul class="checkbox-wrap d-flex flex-column">
                                         @foreach($data->take['necessarily'] as $value)
                                         <li class="checkbox d-flex align-items-center">
-                                            <input type="checkbox" name="" id="">
+                                            <input type="checkbox" name="" id="" {{$value['is_active'] ? 'checked' : ''}}>
                                             <div class="icon">
                                                 <img src="{{asset('assets/images/check-white-icon.svg')}}" alt="">
                                             </div>
@@ -317,7 +321,7 @@
                                     <ul class="checkbox-wrap d-flex flex-column">
                                         @foreach($data->take['necessarily_2'] as $value)
                                             <li class="checkbox d-flex align-items-center">
-                                                <input type="checkbox" name="" id="">
+                                                <input type="checkbox" name="" id="" {{$value['is_active'] ? 'checked' : ''}}>
                                                 <div class="icon">
                                                     <img src="{{asset('assets/images/check-white-icon.svg')}}" alt="">
                                                 </div>
@@ -333,7 +337,7 @@
                             <ul class="checkbox-wrap d-flex flex-column">
                                 @foreach($data->take['preferably'] as $value)
                                     <li class="checkbox d-flex align-items-center">
-                                        <input type="checkbox" name="" id="">
+                                        <input type="checkbox" name="" id="" {{$value['is_active'] ? 'checked' : ''}}>
                                         <div class="icon">
                                             <img src="{{asset('assets/images/check-white-icon.svg')}}" alt="">
                                         </div>
@@ -355,7 +359,7 @@
                     <div class="line"></div>
                     <div class="take-content__foot d-flex align-items-center justify-content-between">
                         <div class="take-content__foot-left d-flex">
-                            <a href="#" class="btn_blue d-flex align-items-center">
+                            <a href="#" class="btn_blue d-flex align-items-center" id="copyButton">
                                 <img src="{{asset('assets/images/copy-icon.svg')}}" alt="">
                                 <span>{{__('Скопировать')}}</span>
                             </a>
@@ -506,4 +510,59 @@
         <!-- Request end -->
 
     </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const copyBtn = document.getElementById('copyButton');
+            if (!copyBtn) return;
+
+            copyBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const copyContent = document.getElementById('copyContent');
+                if (!copyContent) return;
+
+                let result = '';
+
+                const sections = copyContent.querySelectorAll('.take-content__item');
+
+                sections.forEach(section => {
+                    const title = section.querySelector('h3')?.innerText?.trim();
+                    if (title) result += title + ':\n';
+
+                    const checkboxes = section.querySelectorAll('li.checkbox');
+                    if (checkboxes.length) {
+                        // Это раздел с чекбоксами
+                        checkboxes.forEach(checkbox => {
+                            const input = checkbox.querySelector('input[type="checkbox"]');
+                            const label = checkbox.querySelector('p')?.innerText?.trim();
+                            if (label) {
+                                const mark = input?.checked ? '✅' : '❌';
+                                result += `${mark} ${label}\n`;
+                            }
+                        });
+                    } else {
+                        // Это "Мы предоставляем"
+                        const providedItems = section.querySelectorAll('div.d-flex.align-items-start p');
+                        providedItems.forEach(p => {
+                            const text = p.innerText?.trim();
+                            if (text) {
+                                result += '🎒 ' + text + '\n';
+                            }
+                        });
+                    }
+
+                    result += '\n';
+                });
+
+                navigator.clipboard.writeText(result).then(() => {
+
+                }).catch(err => {
+
+                });
+            });
+        });
+    </script>
+
+
+
 </div>
