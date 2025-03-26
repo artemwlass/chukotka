@@ -40,7 +40,7 @@
                                 fill="white"/>
                         </svg>
                     </button>
-                    <livewire:components.switcher-language />
+{{--                    <livewire:components.switcher-language />--}}
                     <button class="bars align-items-center justify-content-center rounded-circle">
                         <img src="{{asset('assets/images/bars.svg')}}" alt="">
                         <img src="{{asset('assets/images/times-blue.svg')}}" alt="">
