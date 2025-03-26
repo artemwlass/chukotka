@@ -139,24 +139,28 @@ class TourResource extends Resource
                             ->schema([
                                 Forms\Components\Repeater::make('take.necessarily')
                                     ->hiddenLabel()
+                                    ->label('обязательно')
                                     ->schema([
                                         TextInput::make('description')->required()->label('Описание'),
                                         Forms\Components\Toggle::make('is_active')->label('Обязательно')
                                     ]),
                                 Forms\Components\Repeater::make('take.necessarily_2')
                                     ->hiddenLabel()
+                                    ->label('обязательно')
                                     ->schema([
                                         TextInput::make('description')->required()->label('Описание'),
                                         Forms\Components\Toggle::make('is_active')->label('Обязательно')
                                     ]),
                                 Forms\Components\Repeater::make('take.preferably')
                                     ->hiddenLabel()
+                                    ->label('желательно')
                                     ->schema([
                                         TextInput::make('description')->required()->label('Описание'),
                                         Forms\Components\Toggle::make('is_active')->label('Обязательно')
                                     ]),
                                 Forms\Components\Repeater::make('take.we_provide')
                                     ->hiddenLabel()
+                                    ->label('мы предоставляем')
                                     ->schema([
                                         TextInput::make('description')->required()->label('Описание'),
                                     ]),

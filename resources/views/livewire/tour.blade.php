@@ -346,6 +346,7 @@
                                 @endforeach
                             </ul>
                         </div>
+                        @if (!empty($data->take['we_provide']) && is_array($data->take['we_provide']))
                         <div class="take-content__item">
                             <h3>{{__('Мы предоставляем')}}</h3>
                             @foreach($data->take['we_provide'] as $value)
@@ -355,6 +356,7 @@
                             </div>
                             @endforeach
                         </div>
+                        @endif
                     </div>
                     <div class="line"></div>
                     <div class="take-content__foot d-flex align-items-center justify-content-between">
