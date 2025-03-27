@@ -167,10 +167,10 @@
                             <div class="btns flex-column flex-sm-row align-items-center gap-2 gap-xl-3">
                                 <a href="#" class="btn_blue"
                                    data-bs-toggle="modal"
-                                   data-bs-target="#dateModal"
-                                   wire:click="$dispatch('openDateModal', { id: {{ $data->id }} })"
+                                   data-bs-target="#bookTour"
+                                   wire:click="$dispatch('openBookTour', { tourId: {{ $data->id }}, bookId: {{$data->id}} })"
                                 >{{__('Забронировать тур')}}</a>
-                                <a href="#" class="btn_orange"  data-bs-toggle="modal" data-bs-target="#tourModal">{{__('Заявка на корп. тур')}}</a>
+                                <a href="#" class="btn_orange" data-bs-toggle="modal" data-bs-target="#tourModal">{{__('Заявка на корп. тур')}}</a>
                             </div>
                         </div>
                     </div>

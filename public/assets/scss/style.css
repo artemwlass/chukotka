@@ -3469,7 +3469,7 @@ body {
         gap: 20px;
     }
 }
-.about-tour__content ul li {
+.about-tour__content ul p {
     font-size: 14px;
     font-weight: 400;
     font-style: normal;
@@ -3730,7 +3730,7 @@ body {
 .program-card__text {
     gap: 12px;
 }
-.program-card__text li {
+.program-card__text p {
     font-size: 14px;
     font-weight: 400;
     font-style: normal;
