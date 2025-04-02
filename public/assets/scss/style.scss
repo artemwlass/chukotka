@@ -193,7 +193,7 @@ body {
         font-weight: bold;
 
         img {
-            height: 15px;
+            height: 45px;
             width: auto;
 
             &:nth-child(2) {
@@ -205,7 +205,7 @@ body {
             font-size: 16px;
 
             img {
-                height: 12px;
+                height: 35px;
             }
         }
 
@@ -1843,7 +1843,7 @@ body {
         }
 
         img {
-            height: 22px;
+            height: 45px;
             width: auto;
 
             @include media(1200) {
