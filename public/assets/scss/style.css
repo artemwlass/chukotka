@@ -248,7 +248,7 @@ body {
     font-weight: bold;
 }
 .header-logo img {
-    height: 15px;
+    height: 45px;
     width: auto;
 }
 .header-logo img:nth-child(2) {
@@ -259,7 +259,7 @@ body {
         font-size: 16px;
     }
     .header-logo img {
-        height: 12px;
+        height: 35px;
     }
 }
 @media screen and (max-width: 700px) {
@@ -1803,17 +1803,17 @@ body {
     }
 }
 .footer-logo img {
-    height: 22px;
+    height: 45px;
     width: auto;
 }
 @media screen and (max-width: 1200px) {
     .footer-logo img {
-        height: 15px;
+        height: 35px;
     }
 }
 @media screen and (max-width: 700px) {
     .footer-logo img {
-        height: 22px;
+        height: 35px;
     }
 }
 @media screen and (max-width: 1200px) {
