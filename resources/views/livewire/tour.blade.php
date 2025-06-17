@@ -156,9 +156,17 @@
                             class="program-card__foot d-flex flex-column flex-xl-row align-items-start align-items-xl-center justify-content-between gap-3 gap-xl-0">
                             <ul class="program-card__list d-flex align-items-center flex-wrap">
                                 @foreach($day->program_capabilities['capabilities'] as $value)
+                                    @php
+                                        $bgColor = in_array($value['icon'], [
+                                            'program-card-icon-1.svg',
+                                            'program-card-icon-2.svg',
+                                            'program-card-icon-3.svg',
+                                            'program-card-icon-4.svg',
+                                        ]) ? '#0252DD1A' : '#F07D491A';
+                                    @endphp
                                 <li class="d-flex align-items-center">
-                                    <div class="icon d-flex align-items-center justify-content-center rounded-circle" style="background: {{isset($value['color']) ? $value['color'] : 'rgba(2, 82, 221, 0.1)'}}">
-                                        <img src="{{asset('storage/' . $value['icon'])}}" alt="" >
+                                    <div class="icon d-flex align-items-center justify-content-center rounded-circle" style="background: {{ $bgColor }} ">
+                                        <img src="{{asset('program-card/' . $value['icon'])}}" alt="" >
                                     </div>
                                     <p>{!! $value['title'] !!}</p>
                                 </li>

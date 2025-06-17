@@ -28,7 +28,7 @@ class BookTour extends Component
     #[On('openBookTour')]
     public function getBookTour($tourId, $bookId)
     {
-        $this->tour = Tour::with('bookings')->find($tourId);
+        $this->tour = Tour::where('is_active', true)->with('bookings')->find($tourId);
         $this->bookId = $bookId;
     }
 

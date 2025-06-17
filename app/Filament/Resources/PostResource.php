@@ -43,14 +43,27 @@ class PostResource extends Resource
                     ->tabs([
                         Tabs\Tab::make('SEO')
                             ->schema([
-                                TextInput::make('seo.title')
+                                Forms\Components\TextInput::make('seo.title')
                                     ->label('Title'),
-                                TextInput::make('seo.keywords')
-                                    ->label('Keywords'),
-                                Textarea::make('seo.description')
+                                Forms\Components\TextInput::make('seo.og_title')
+                                    ->label('Og:Title'),
+                                Forms\Components\Textarea::make('seo.description')
                                     ->label('Description')
-                                    ->rows(5)
+                                    ->rows(5),
+                                Forms\Components\Textarea::make('seo.og_description')
+                                    ->label('Og:Description')
+                                    ->rows(5),
+                                Forms\Components\TextInput::make('seo.keywords')
+                                    ->label('Keywords'),
+                                Forms\Components\TextInput::make('seo.og_type')
+                                    ->label('Og:Type'),
+                                Forms\Components\TextInput::make('seo.og_url')
+                                    ->label('Og:Url')
                                     ->columnSpanFull(),
+                                Forms\Components\FileUpload::make('seo.og_image')
+                                    ->label('Og:Image')
+                                    ->columnSpanFull()
+                                    ->directory('seo')
                             ])->columns(2),
                         Tabs\Tab::make('Основные')
                             ->schema([
@@ -94,7 +107,7 @@ class PostResource extends Resource
                                     ->maxContentWidth('5xl')
                                     ->required(),
                                 Select::make('recommendation_tour_id')->label('Рекомендованный тур')
-                                    ->options(Tour::all()->pluck('title', 'id')),
+                                    ->options(Tour::where('is_active', true)->pluck('title', 'id')),
                                 TiptapEditor::make('description_2')
                                     ->hiddenLabel()
                                     ->profile('default')
@@ -107,13 +120,13 @@ class PostResource extends Resource
                             ->schema([
                                 Select::make('recommend.1')
                                     ->hiddenLabel()
-                                    ->options(Tour::all()->pluck('title', 'id')),
+                                    ->options(Tour::where('is_active', true)->pluck('title', 'id')),
                                 Select::make('recommend.2')
                                     ->hiddenLabel()
-                                    ->options(Tour::all()->pluck('title', 'id')),
+                                    ->options(Tour::where('is_active', true)->pluck('title', 'id')),
                                 Select::make('recommend.3')
                                     ->hiddenLabel()
-                                    ->options(Tour::all()->pluck('title', 'id')),
+                                    ->options(Tour::where('is_active', true)->pluck('title', 'id')),
                             ]),
                     ])->columnSpanFull(),
 

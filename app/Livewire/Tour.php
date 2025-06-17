@@ -22,6 +22,7 @@ class Tour extends Component
         $this->data = \App\Models\Tour::where('slug->' . app()->getLocale(), $slug)
             ->with('bookings')
             ->with('days')
+            ->where('is_active', true)
             ->first();
 
         $this->nearestBooking = $this->data->bookings
@@ -33,7 +34,10 @@ class Tour extends Component
             ->where('date_from', '>', Carbon::today())
             ->sortBy('date_from');
 
-        $this->tours = \App\Models\Tour::whereIn('id', array_values($this->data->recommend))->get();
+        $recommendTourIds = array_filter(array_values($this->data->recommend ?? []));
+        $this->tours = \App\Models\Tour::whereIn('id', $recommendTourIds)
+            ->where('is_active', true)
+            ->get();
 
         $this->setSeo($this->data);
     }

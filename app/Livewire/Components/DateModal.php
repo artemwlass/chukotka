@@ -15,7 +15,7 @@ class DateModal extends Component
 
     public function mount($id = null)
     {
-        $this->tour = Tour::with('bookings')->find($id);
+        $this->tour = Tour::where('is_active', true)->with('bookings')->find($id);
         if ($this->tour instanceof Tour && $this->tour->bookings->isNotEmpty()) {
             // Группируем бронирования вручную
             $grouped = [];
@@ -35,7 +35,7 @@ class DateModal extends Component
     #[On('openDateModal')]
     public function getTourDates($id)
     {
-        $this->tour = Tour::with('bookings')->find($id);
+        $this->tour = Tour::where('is_active', true)->with('bookings')->find($id);
         if ($this->tour instanceof Tour && $this->tour->bookings->isNotEmpty()) {
             // Группируем бронирования вручную
             $grouped = [];

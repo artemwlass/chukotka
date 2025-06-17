@@ -17,7 +17,7 @@ class DaysRelationManager extends RelationManager
 {
     use Translatable;
 
-    #[Reactive]
+//    #[Reactive]
     public ?string $activeLocale = null;
     protected static string $relationship = 'days';
 
@@ -25,6 +25,17 @@ class DaysRelationManager extends RelationManager
 
     public function form(Form $form): Form
     {
+        $iconOptions = [
+            'program-card-icon-1.svg' => "<img src=\"" . asset('program-card/program-card-icon-1.svg') . "\" alt=\"Program Card Icon 1\" class=\"w-6 h-6\">",
+            'program-card-icon-2.svg' => "<img src=\"" . asset('program-card/program-card-icon-2.svg') . "\" alt=\"Program Card Icon 2\" class=\"w-6 h-6\">",
+            'program-card-icon-3.svg' => "<img src=\"" . asset('program-card/program-card-icon-3.svg') . "\" alt=\"Program Card Icon 3\" class=\"w-6 h-6\">",
+            'program-card-icon-4.svg' => "<img src=\"" . asset('program-card/program-card-icon-4.svg') . "\" alt=\"Program Card Icon 4\" class=\"w-6 h-6\">",
+            'program-card-icon-5.svg' => "<img src=\"" . asset('program-card/program-card-icon-5.svg') . "\" alt=\"Program Card Icon 4\" class=\"w-6 h-6\">",
+            'program-card-icon-6.svg' => "<img src=\"" . asset('program-card/program-card-icon-6.svg') . "\" alt=\"Program Card Icon 4\" class=\"w-6 h-6\">",
+            'program-card-icon-7.svg' => "<img src=\"" . asset('program-card/program-card-icon-7.svg') . "\" alt=\"Program Card Icon 4\" class=\"w-6 h-6\">",
+            'program-card-icon-8.svg' => "<img src=\"" . asset('program-card/program-card-icon-8.svg') . "\" alt=\"Program Card Icon 4\" class=\"w-6 h-6\">",
+        ];
+
         return $form
             ->schema([
                 Forms\Components\Grid::make()
@@ -54,11 +65,12 @@ class DaysRelationManager extends RelationManager
                             ->label('Свойства')
                             ->columnSpanFull()
                             ->schema([
-                                Forms\Components\FileUpload::make('icon')->required()->label('Иконка'),
-                                Forms\Components\Select::make('color')->required()->label('Цвет')->options([
-                                   'rgba(109, 109, 109, 0.1)' => 'Неактивный',
-                                   'rgba(2, 82, 221, 0.1)' => 'Активный',
-                                ]),
+                                Forms\Components\Select::make('icon')
+                                    ->label('Иконка')
+                                    ->options($iconOptions)
+                                    ->required()
+                                    ->searchable()
+                                    ->allowHtml(),
                                 TextInput::make('title')->required()->label('Текст')
                             ])
 

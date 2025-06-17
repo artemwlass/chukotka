@@ -52,6 +52,10 @@ class Search extends Component
                 ->limit(5) // Ограничиваем количество результатов
                 ->get();
 
+            if ($model === Tour::class) {
+                $queryResults = $queryResults->where('is_active', 1);
+            }
+
             foreach ($queryResults as $item) {
                 // Извлекаем локализованный заголовокdd($item);
                 $title = $this->extractLocalizedField($item, 'title', $language);
