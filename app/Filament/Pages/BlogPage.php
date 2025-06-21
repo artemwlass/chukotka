@@ -48,12 +48,25 @@ class BlogPage extends Page
                                             ->schema([
                                                 TextInput::make('seo.ru.title')
                                                     ->label('Title'),
-                                                TextInput::make('seo.ru.keywords')
-                                                    ->label('Keywords'),
+                                                TextInput::make('seo.ru.og_title')
+                                                    ->label('Og:Title'),
                                                 Textarea::make('seo.ru.description')
                                                     ->label('Description')
-                                                    ->rows(5)
+                                                    ->rows(5),
+                                                Textarea::make('seo.ru.og_description')
+                                                    ->label('Og:Description')
+                                                    ->rows(5),
+                                                TextInput::make('seo.ru.keywords')
+                                                    ->label('Keywords'),
+                                                TextInput::make('seo.ru.og_type')
+                                                    ->label('Og:Type'),
+                                                TextInput::make('seo.ru.og_url')
+                                                    ->label('Og:Url')
                                                     ->columnSpanFull(),
+                                                FileUpload::make('seo.ru.og_image')
+                                                    ->label('Og:Image')
+                                                    ->columnSpanFull()
+                                                    ->directory('seo')
                                             ])->columns(2),
                                         Tabs\Tab::make('Заголовок')
                                             ->schema([
@@ -72,12 +85,25 @@ class BlogPage extends Page
                                             ->schema([
                                                 TextInput::make('seo.en.title')
                                                     ->label('Title'),
-                                                TextInput::make('seo.en.keywords')
-                                                    ->label('Keywords'),
+                                                TextInput::make('seo.en.og_title')
+                                                    ->label('Og:Title'),
                                                 Textarea::make('seo.en.description')
                                                     ->label('Description')
-                                                    ->rows(5)
+                                                    ->rows(5),
+                                                Textarea::make('seo.en.og_description')
+                                                    ->label('Og:Description')
+                                                    ->rows(5),
+                                                TextInput::make('seo.en.keywords')
+                                                    ->label('Keywords'),
+                                                TextInput::make('seo.en.og_type')
+                                                    ->label('Og:Type'),
+                                                TextInput::make('seo.en.og_url')
+                                                    ->label('Og:Url')
                                                     ->columnSpanFull(),
+                                                FileUpload::make('seo.en.og_image')
+                                                    ->label('Og:Image')
+                                                    ->columnSpanFull()
+                                                    ->directory('seo')
                                             ])->columns(2),
                                         Tabs\Tab::make('Заголовок')
                                             ->schema([
