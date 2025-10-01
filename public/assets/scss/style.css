@@ -2277,6 +2277,12 @@ body {
 .article-content__item {
     gap: 20px;
 }
+.article-content__item img {
+    height: auto !important;
+    max-width: 100%;
+    width: auto !important;
+}
+
 .article h3 {
     font-size: 20px;
     line-height: 140%;

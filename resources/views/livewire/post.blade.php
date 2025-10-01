@@ -6,7 +6,7 @@
             <div class="container breadcrumb-container d-flex align-items-center flex-wrap">
                 <a href="/">{{__('Главная')}}</a>
                 <span>/</span>
-                <a href="./blog.html">{{__('Блог')}}</a>
+                <a href="{{route('blog')}}">{{__('Блог')}}</a>
                 <span>/</span>
                 <span class="text-blue">{{__($data->title)}}</span>
             </div>
